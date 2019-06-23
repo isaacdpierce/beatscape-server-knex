@@ -11,6 +11,13 @@ const SpritesService = {
         return rows[0];
       });
   },
+  getById(knex, id) {
+    return knex
+      .from('sprites_list')
+      .select('*')
+      .where('sprite_id', id)
+      .first();
+  },
 };
 
 module.exports = SpritesService;

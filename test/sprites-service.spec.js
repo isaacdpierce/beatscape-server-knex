@@ -39,13 +39,26 @@ describe(`Sprites service object`, function() {
   after(() => db.destroy());
 
   context(`Given 'sprites_list' has data`, () => {
-    before(() => {
+    beforeEach(() => {
       return db.into('sprites_list').insert(testSprites);
     });
     it(`getAllSprites() resolves all articles from 'sprites_list' table`, () => {
       // test that SpritesService.getAllSprites gets data from table
       return SpritesService.getAllSprites(db).then(actual => {
         expect(actual).to.eql(testSprites);
+      });
+    });
+
+    it(`getById() resolves a sprite by id from 'sprites_list' table`, () => {
+      const thirdId = 3;
+      const thirdTestSprite = testSprites[thirdId - 1];
+      return SpritesService.getById(db, thirdId).then(actual => {
+        expect(actual).to.eql({
+          sprite_id: thirdId,
+          sprite_name: thirdTestSprite.sprite_name,
+          sprite_url: thirdTestSprite.sprite_url,
+          category: thirdTestSprite.category,
+        });
       });
     });
   });
