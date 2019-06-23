@@ -5,8 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": "mocha --require test/setup.js",
-    "dev": "nodemon src/index.js",
-    "start": "node src/index.js",
+    "dev": "nodemon src/sprites.js",
+    "start": "node src/sprites.js",
     "predeploy": "npm audit",
     "deploy": "git push heroku master"
   },
