@@ -61,6 +61,19 @@ describe(`Sprites service object`, function() {
         });
       });
     });
+
+    it(`deleteSprite() removes an Sprite by id from 'sprites_list' table`, () => {
+      const spriteId = 3;
+      return SpritesService.deleteSprite(db, spriteId)
+        .then(() => SpritesService.getAllSprites(db))
+        .then(allSprites => {
+          // copy the test Sprites array without the "deleted" Sprite
+          const expected = testSprites.filter(
+            sprite => sprite.sprite_id !== spriteId
+          );
+          expect(allSprites).to.eql(expected);
+        });
+    });
   });
 
   context(`Given 'sprites_list' has no data`, () => {

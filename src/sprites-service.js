@@ -18,6 +18,11 @@ const SpritesService = {
       .where('sprite_id', id)
       .first();
   },
+  deleteSprite(knex, sprite_id) {
+    return knex('sprites_list')
+      .where({ sprite_id })
+      .delete();
+  },
 };
 
 module.exports = SpritesService;

@@ -1,0 +1,3 @@
+DROP TYPE IF EXISTS scene;
+
+DROP TABLE IF EXISTS sprites_list;
