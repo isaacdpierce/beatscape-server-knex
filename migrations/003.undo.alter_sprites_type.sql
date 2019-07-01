@@ -1,0 +1,3 @@
+ALTER TABLE sprites DROP COLUMN IF EXISTS scene;
+
+DROP TYPE IF EXISTS sprite_scene;

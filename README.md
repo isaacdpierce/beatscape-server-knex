@@ -29,4 +29,4 @@ When your new project is ready for deployment, add a new Heroku application with
 
 Run to seed sprites list:
 
-psql -U gryzlywlf -d soundscapes -f ./seeds/seed.sprites_list.sql
+`psql -U gryzlywlf -d beatscape -f ./seeds/seed.sprites_list.sql`

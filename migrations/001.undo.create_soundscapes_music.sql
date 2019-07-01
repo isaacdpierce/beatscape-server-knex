@@ -1,0 +1,1 @@
+DROP TABLE IF EXISTS soundscape_music

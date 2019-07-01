@@ -1,5 +1,5 @@
-INSERT INTO sprites_list
-(sprite_name, sprite_url, category)
+INSERT INTO sprites
+(sprite_name, sprite_url, scene)
 
 VALUES
 ('rain-car-1', 'https://www.aws.s3.rain-car-1', 'City'),

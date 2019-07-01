@@ -1,29 +1,11 @@
-const SpritesService = require('../src/sprites-service');
+const SpritesService = require('../src/services/sprites-service');
 const knex = require('knex');
+const { makeTestSpritesArray } = require('./articles.fixtures');
 
 describe(`Sprites service object`, function() {
   let db;
 
-  let testSprites = [
-    {
-      sprite_id: 1,
-      sprite_name: 'cafe-2',
-      sprite_url: 'https://www.aws.s3.cafe-2',
-      category: 'City',
-    },
-    {
-      sprite_id: 2,
-      sprite_name: 'cafe-3',
-      sprite_url: 'https://www.aws.s3.cafe-3',
-      category: 'City',
-    },
-    {
-      sprite_id: 3,
-      sprite_name: 'wind-desert-1',
-      sprite_url: 'https://www.aws.s3.wind-desert-1',
-      category: 'Nature',
-    },
-  ];
+  const testSprites = makeTestSpritesArray();
 
   before(() => {
     db = knex({
@@ -32,24 +14,24 @@ describe(`Sprites service object`, function() {
     });
   });
 
-  before(() => db('sprites_list').truncate());
+  before(() => db('sprites').truncate());
 
-  afterEach(() => db('sprites_list').truncate());
+  afterEach(() => db('sprites').truncate());
 
   after(() => db.destroy());
 
-  context(`Given 'sprites_list' has data`, () => {
+  context(`Given 'sprites' has data`, () => {
     beforeEach(() => {
-      return db.into('sprites_list').insert(testSprites);
+      return db.into('sprites').insert(testSprites);
     });
-    it(`getAllSprites() resolves all articles from 'sprites_list' table`, () => {
+    it(`getAllSprites() resolves all articles from 'sprites' table`, () => {
       // test that SpritesService.getAllSprites gets data from table
       return SpritesService.getAllSprites(db).then(actual => {
         expect(actual).to.eql(testSprites);
       });
     });
 
-    it(`getById() resolves a sprite by id from 'sprites_list' table`, () => {
+    it(`getById() resolves a sprite by id from 'sprites' table`, () => {
       const thirdId = 3;
       const thirdTestSprite = testSprites[thirdId - 1];
       return SpritesService.getById(db, thirdId).then(actual => {
@@ -57,12 +39,12 @@ describe(`Sprites service object`, function() {
           sprite_id: thirdId,
           sprite_name: thirdTestSprite.sprite_name,
           sprite_url: thirdTestSprite.sprite_url,
-          category: thirdTestSprite.category,
+          scene: thirdTestSprite.scene,
         });
       });
     });
 
-    it(`deleteSprite() removes an Sprite by id from 'sprites_list' table`, () => {
+    it(`deleteSprite() removes an Sprite by id from 'sprites' table`, () => {
       const spriteId = 3;
       return SpritesService.deleteSprite(db, spriteId)
         .then(() => SpritesService.getAllSprites(db))
@@ -76,7 +58,7 @@ describe(`Sprites service object`, function() {
     });
   });
 
-  context(`Given 'sprites_list' has no data`, () => {
+  context(`Given 'sprites' has no data`, () => {
     it(`getAllArticles() resolves an empty array`, () => {
       return SpritesService.getAllSprites(db).then(actual => {
         expect(actual).to.eql([]);
@@ -87,14 +69,14 @@ describe(`Sprites service object`, function() {
         sprite_id: 1,
         sprite_name: 'wind-desert-6',
         sprite_url: 'https://www.aws.s3.wind-desert-6',
-        category: 'Nature',
+        scene: 'Nature',
       };
       return SpritesService.insertSprite(db, newSprite).then(actual => {
         expect(actual).to.eql({
           sprite_id: 1,
           sprite_name: newSprite.sprite_name,
           sprite_url: newSprite.sprite_url,
-          category: newSprite.category,
+          scene: newSprite.scene,
         });
       });
     });
