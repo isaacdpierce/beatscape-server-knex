@@ -6,6 +6,7 @@ const helmet = require('helmet');
 const { NODE_ENV } = require('./config');
 const SpritesService = require('./services/sprites-service');
 const SoundscapesService = require('./services/soundscapes-service');
+const EnvironmentsService = require('./services/environments-service');
 
 const app = express();
 
@@ -15,11 +16,27 @@ app.use(morgan(morganOption));
 app.use(cors());
 app.use(helmet());
 
+// 'db' is set in server.js then passed in to app -> app.set
+
 app.get('/soundscapes', (req, res, next) => {
   const knexInstance = req.app.get('db');
   SoundscapesService.getAllSoundscapes(knexInstance)
     .then(soundscapes => {
       res.json(soundscapes);
+    })
+    .catch(next);
+});
+
+app.get('/soundscapes/:soundscape_id', (req, res, next) => {
+  const knexInstance = req.app.get('db');
+  SoundscapesService.getById(knexInstance, req.params.soundscape_id)
+    .then(soundscape => {
+      if (!soundscape) {
+        return res.status(404).json({
+          error: { message: `Soundscape doesn't exist` },
+        });
+      }
+      res.json(soundscape);
     })
     .catch(next);
 });
@@ -43,6 +60,29 @@ app.get('/sprites/:sprite_id', (req, res, next) => {
         });
       }
       res.json(sprite);
+    })
+    .catch(next);
+});
+
+app.get('/environments', (req, res, next) => {
+  const knexInstance = req.app.get('db');
+  EnvironmentsService.getAllEnvironments(knexInstance)
+    .then(environments => {
+      res.json(environments);
+    })
+    .catch(next);
+});
+
+app.get('/environments/:environment_id', (req, res, next) => {
+  const knexInstance = req.app.get('db');
+  EnvironmentsService.getById(knexInstance, req.params.environment_id)
+    .then(environment => {
+      if (!environment) {
+        return res.status(404).json({
+          error: { message: `Environment doesn't exist` },
+        });
+      }
+      res.json(environment);
     })
     .catch(next);
 });

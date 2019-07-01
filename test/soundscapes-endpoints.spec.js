@@ -3,9 +3,7 @@ const knex = require('knex');
 const app = require('../src/app');
 const { makeTestMusicArray } = require('./soundscapes.fixtures');
 
-// TODO: make real GET /soundscapes and GET /soundscape/:id endpoint in app.js
-// TODO: remove skip
-describe.skip('Soundscape_music endpoints', function() {
+describe('Soundscape_music endpoints', function() {
   let db;
 
   before('make knex instance', () => {
@@ -22,7 +20,7 @@ describe.skip('Soundscape_music endpoints', function() {
 
   afterEach('cleanup', () => db('soundscape_music').truncate());
 
-  context('Given there are soundscape in the database', () => {
+  context('Given there are soundscapes in the database', () => {
     const testMusic = makeTestMusicArray();
 
     beforeEach('insert soundscape', () => {

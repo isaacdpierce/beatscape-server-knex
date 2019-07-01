@@ -4,7 +4,7 @@ const app = require('../src/app');
 const { makeTestSpritesArray } = require('./soundscapes.fixtures');
 
 // TODO - create sprites GET test endpoints
-describe.only('Sprites Endpoints', function() {
+describe('Sprites Endpoints', function() {
   let db;
 
   before('make knex instance', () => {

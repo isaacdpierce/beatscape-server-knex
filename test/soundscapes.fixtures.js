@@ -1,7 +1,7 @@
 function makeTestMusicArray() {
   return [
     {
-      soundscape_id: '1',
+      soundscape_id: 1,
       soundscape_name: 'Silky Setup',
       kick: {
         kick_1: 'https:/beatscape.s3.ca-central-1.amazonaws.com/kick.mp3',
@@ -34,7 +34,7 @@ function makeTestMusicArray() {
       },
     },
     {
-      soundscape_id: '2',
+      soundscape_id: 2,
       soundscape_name: 'Tricky Testy',
       kick: {
         kick_1: 'https:/beatscape.s3.ca-central-1.amazonaws.com/kick.mp3',
@@ -67,7 +67,7 @@ function makeTestMusicArray() {
       },
     },
     {
-      soundscape_id: '3',
+      soundscape_id: 3,
       soundscape_name: 'Fatigued Fakes',
       kick: {
         kick_1: 'https:/beatscape.s3.ca-central-1.amazonaws.com/kick.mp3',
@@ -125,7 +125,31 @@ function makeTestSpritesArray() {
   ];
 }
 
+function makeTestEnvironmentsArray() {
+  return [
+    {
+      environment_id: 1,
+      environment_name: 'rain_1',
+      environment_url: 'https://www.aws.s3.rain_1',
+      scene: 'Nature',
+    },
+    {
+      environment_id: 2,
+      environment_name: 'traffic_1',
+      environment_url: 'https://www.aws.s3.traffic_1',
+      scene: 'City',
+    },
+    {
+      environment_id: 3,
+      environment_name: 'waterfall_1',
+      environment_url: 'https://www.aws.s3.waterfall_1',
+      scene: 'Nature',
+    },
+  ];
+}
+
 module.exports = {
   makeTestMusicArray,
   makeTestSpritesArray,
+  makeTestEnvironmentsArray,
 };
