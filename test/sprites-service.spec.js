@@ -1,6 +1,6 @@
 const SpritesService = require('../src/services/sprites-service');
 const knex = require('knex');
-const { makeTestSpritesArray } = require('./articles.fixtures');
+const { makeTestSpritesArray } = require('./soundscapes.fixtures');
 
 describe(`Sprites service object`, function() {
   let db;

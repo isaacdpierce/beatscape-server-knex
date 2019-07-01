@@ -5,6 +5,7 @@ const cors = require('cors');
 const helmet = require('helmet');
 const { NODE_ENV } = require('./config');
 const SpritesService = require('./services/sprites-service');
+const SoundscapesService = require('./services/soundscapes-service');
 
 const app = express();
 
@@ -14,7 +15,15 @@ app.use(morgan(morganOption));
 app.use(cors());
 app.use(helmet());
 
-// TODO create GET sprites by id endpoint
+app.get('/soundscapes', (req, res, next) => {
+  const knexInstance = req.app.get('db');
+  SoundscapesService.getAllSoundscapes(knexInstance)
+    .then(soundscapes => {
+      res.json(soundscapes);
+    })
+    .catch(next);
+});
+
 app.get('/sprites', (req, res, next) => {
   const knexInstance = req.app.get('db');
   SpritesService.getAllSprites(knexInstance)
@@ -28,6 +37,11 @@ app.get('/sprites/:sprite_id', (req, res, next) => {
   const knexInstance = req.app.get('db');
   SpritesService.getById(knexInstance, req.params.sprite_id)
     .then(sprite => {
+      if (!sprite) {
+        return res.status(404).json({
+          error: { message: `Sprite doesn't exist` },
+        });
+      }
       res.json(sprite);
     })
     .catch(next);
