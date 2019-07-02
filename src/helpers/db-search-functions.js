@@ -14,17 +14,17 @@ knexInstance
   });
 
 // Function to search db by search term
-// function searchBySoundscapeName(searchTerm) {
-//   knexInstance
-//     .select('soundscape_name')
-//     .from('soundscape_music')
-//     .where('name', 'ILIKE', `%${searchTerm}%`)
-//     .then(result => {
-//       console.log(result);
-//     });
-// }
+function searchBySoundscapeName(searchTerm) {
+  knexInstance
+    .select('soundscape_name')
+    .from('soundscape_music')
+    .where('name', 'ILIKE', `%${searchTerm}%`)
+    .then(result => {
+      console.log(result);
+    });
+}
 
-// searchByEnvironmentName('silk');
+searchByEnvironmentName('silk');
 
 // Function to search Environments Table by search term
 function searchByEnvironmentName(searchTerm) {
