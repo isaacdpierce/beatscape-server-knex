@@ -20,11 +20,11 @@ describe('Soundscape_music endpoints', function() {
 
   afterEach('cleanup', () => db('soundscape_music').truncate());
 
-  describe('GET /soundscapes', () => {
+  describe('GET /api/soundscapes', () => {
     context(`Given no soundscapes`, () => {
       it(`responds with 200 and an empty list`, () => {
         return supertest(app)
-          .get('/soundscapes')
+          .get('/api/soundscapes')
           .expect(200, []);
       });
     });
@@ -36,20 +36,20 @@ describe('Soundscape_music endpoints', function() {
         return db.into('soundscape_music').insert(testMusic);
       });
 
-      it('GET /soundscapes responds with 200 and all of the soundscapes', () => {
+      it('GET /api/soundscapes responds with 200 and all of the soundscapes', () => {
         return supertest(app)
-          .get('/soundscapes')
+          .get('/api/soundscapes')
           .expect(200, testMusic);
       });
     });
   });
 
-  describe('GET soundscapes/:soundscape_id', () => {
+  describe('GET /api/soundscapes/:soundscape_id', () => {
     context(`Given no soundscapes`, () => {
       it(`responds with 404`, () => {
         const soundscapeId = 123456;
         return supertest(app)
-          .get(`/soundscapes/${soundscapeId}`)
+          .get(`/api/soundscapes/${soundscapeId}`)
           .expect(404, { error: { message: `Soundscape doesn't exist` } });
       });
     });
@@ -60,11 +60,11 @@ describe('Soundscape_music endpoints', function() {
         return db.into('soundscape_music').insert(testMusic);
       });
 
-      it('GET /soundscapes/:soundscape_id responds with 200 and the specified soundscape', () => {
+      it('GET /api/soundscapes/:soundscape_id responds with 200 and the specified soundscape', () => {
         const soundscapeId = 2;
         const expectedSoundscape = testMusic[soundscapeId - 1];
         return supertest(app)
-          .get(`/soundscapes/${soundscapeId}`)
+          .get(`/api/soundscapes/${soundscapeId}`)
           .expect(200, expectedSoundscape);
       });
     });

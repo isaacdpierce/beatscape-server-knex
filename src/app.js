@@ -19,9 +19,9 @@ app.use(helmet());
 
 // 'db' is set in server.js then passed in to app -> app.set
 
-app.use('/soundscapes', soundscapesRouter);
-app.use('/sprites', spritesRouter);
-app.use('/environments', environmentsRouter);
+app.use('/api/soundscapes', soundscapesRouter);
+app.use('/api/sprites', spritesRouter);
+app.use('/api/environments', environmentsRouter);
 
 app.get('/', (req, res) => {
   res.send('Hello, world!');

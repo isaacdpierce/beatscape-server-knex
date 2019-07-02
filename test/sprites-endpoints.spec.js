@@ -20,11 +20,11 @@ describe('Sprites Endpoints', function() {
 
   afterEach('cleanup', () => db('sprites').truncate());
 
-  describe('GET /sprites', () => {
+  describe('GET /api/sprites', () => {
     context(`Given no sprites`, () => {
       it(`responds with 200 and an empty list`, () => {
         return supertest(app)
-          .get('/sprites')
+          .get('/api/sprites')
           .expect(200, []);
       });
     });
@@ -35,20 +35,20 @@ describe('Sprites Endpoints', function() {
         return db.into('sprites').insert(testSprites);
       });
 
-      it('GET /sprites responds with 200 and all of the sprites', () => {
+      it('GET /api/sprites responds with 200 and all of the sprites', () => {
         return supertest(app)
-          .get('/sprites')
+          .get('/api/sprites')
           .expect(200, testSprites);
       });
     });
   });
 
-  describe('GET sprites/:sprite_id', () => {
+  describe('GET /api/sprites/:sprite_id', () => {
     context(`Given no sprites`, () => {
       it(`responds with 404`, () => {
         const spriteId = 123456;
         return supertest(app)
-          .get(`/sprites/${spriteId}`)
+          .get(`/api/sprites/${spriteId}`)
           .expect(404, { error: { message: `Sprite doesn't exist` } });
       });
     });
@@ -59,11 +59,11 @@ describe('Sprites Endpoints', function() {
         return db.into('sprites').insert(testSprites);
       });
 
-      it('GET /sprites/:sprite_id responds with 200 and the specified sprite', () => {
+      it('GET /api/sprites/:sprite_id responds with 200 and the specified sprite', () => {
         const spriteId = 2;
         const expectedSprite = testSprites[spriteId - 1];
         return supertest(app)
-          .get(`/sprites/${spriteId}`)
+          .get(`/api/sprites/${spriteId}`)
           .expect(200, expectedSprite);
       });
     });

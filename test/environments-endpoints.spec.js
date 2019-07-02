@@ -20,11 +20,11 @@ describe('Environments Endpoints', function() {
 
   afterEach('cleanup', () => db('environments').truncate());
 
-  describe('GET /environments', () => {
+  describe('GET /api/environments', () => {
     context(`Given no environments`, () => {
       it(`responds with 200 and an empty list`, () => {
         return supertest(app)
-          .get('/environments')
+          .get('/api/environments')
           .expect(200, []);
       });
     });
@@ -35,19 +35,19 @@ describe('Environments Endpoints', function() {
         return db.into('environments').insert(testEnvironments);
       });
 
-      it('GET /environments responds with 200 and all of the environments', () => {
+      it('GET /api/environments responds with 200 and all of the environments', () => {
         return supertest(app)
-          .get('/environments')
+          .get('/api/environments')
           .expect(200, testEnvironments);
       });
     });
 
-    describe('GET environments/:environment_id', () => {
+    describe('GET /api/environments/:environment_id', () => {
       context(`Given no environments`, () => {
         it(`responds with 404`, () => {
           const environmentId = 123456;
           return supertest(app)
-            .get(`/environments/${environmentId}`)
+            .get(`/api/environments/${environmentId}`)
             .expect(404, { error: { message: `Environment doesn't exist` } });
         });
       });
@@ -58,11 +58,11 @@ describe('Environments Endpoints', function() {
           return db.into('environments').insert(testEnvironments);
         });
 
-        it('GET /environments/:environment_id responds with 200 and the specified environment', () => {
+        it('GET /api/environments/:environment_id responds with 200 and the specified environment', () => {
           const environmentId = 2;
           const expectedEnvironment = testEnvironments[environmentId - 1];
           return supertest(app)
-            .get(`/environments/${environmentId}`)
+            .get(`/api/environments/${environmentId}`)
             .expect(200, expectedEnvironment);
         });
       });
