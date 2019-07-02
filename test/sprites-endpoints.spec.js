@@ -3,7 +3,6 @@ const knex = require('knex');
 const app = require('../src/app');
 const { makeTestSpritesArray } = require('./soundscapes.fixtures');
 
-// TODO - create sprites GET test endpoints
 describe('Sprites Endpoints', function() {
   let db;
 
@@ -42,30 +41,30 @@ describe('Sprites Endpoints', function() {
           .expect(200, testSprites);
       });
     });
+  });
 
-    describe('GET sprites/:sprite_id', () => {
-      context(`Given no sprites`, () => {
-        it(`responds with 404`, () => {
-          const spriteId = 123456;
-          return supertest(app)
-            .get(`/sprites/${spriteId}`)
-            .expect(404, { error: { message: `Sprite doesn't exist` } });
-        });
+  describe('GET sprites/:sprite_id', () => {
+    context(`Given no sprites`, () => {
+      it(`responds with 404`, () => {
+        const spriteId = 123456;
+        return supertest(app)
+          .get(`/sprites/${spriteId}`)
+          .expect(404, { error: { message: `Sprite doesn't exist` } });
       });
-      context('Given there are sprites in the database', () => {
-        const testSprites = makeTestSpritesArray();
+    });
+    context('Given there are sprites in the database', () => {
+      const testSprites = makeTestSpritesArray();
 
-        beforeEach('insert sprites', () => {
-          return db.into('sprites').insert(testSprites);
-        });
+      beforeEach('insert sprites', () => {
+        return db.into('sprites').insert(testSprites);
+      });
 
-        it('GET /sprites/:sprite_id responds with 200 and the specified sprite', () => {
-          const spriteId = 2;
-          const expectedSprite = testSprites[spriteId - 1];
-          return supertest(app)
-            .get(`/sprites/${spriteId}`)
-            .expect(200, expectedSprite);
-        });
+      it('GET /sprites/:sprite_id responds with 200 and the specified sprite', () => {
+        const spriteId = 2;
+        const expectedSprite = testSprites[spriteId - 1];
+        return supertest(app)
+          .get(`/sprites/${spriteId}`)
+          .expect(200, expectedSprite);
       });
     });
   });
