@@ -13,10 +13,16 @@ const SpritesService = {
   },
   getById(knex, id) {
     return knex
-      .from('sprites')
       .select('*')
+      .from('sprites')
       .where('sprite_id', id)
       .first();
+  },
+  getByScene(knex, scene) {
+    return knex
+      .select('*')
+      .from('sprites')
+      .where('scene', scene);
   },
   deleteSprite(knex, sprite_id) {
     return knex

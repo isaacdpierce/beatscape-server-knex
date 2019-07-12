@@ -13,11 +13,12 @@ const SoundscapesService = {
   },
   getById(knex, id) {
     return knex
-      .from('soundscape_music')
       .select('*')
+      .from('soundscape_music')
       .where('soundscape_id', id)
       .first();
   },
+
   deleteSoundscape(knex, soundscape_id) {
     return knex
       .from('soundscape_music')

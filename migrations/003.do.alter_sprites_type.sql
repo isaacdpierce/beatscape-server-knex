@@ -1,7 +1,7 @@
 CREATE TYPE sprite_scene AS ENUM (
-    'Nature',
-    'City',
-    'City-Nature'
+    'nature',
+    'city',
+    'city-nature'
 );
 
 ALTER TABLE sprites

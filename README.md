@@ -21,12 +21,20 @@ Start nodemon for the application `npm run dev`
 
 Run the tests `npm test`
 
-## Deploying
+## Migrations
 
-When your new project is ready for deployment, add a new Heroku application with `heroku create`. This will make a new git remote called "heroku" and you can then `npm run deploy` which will push to this remote's master branch.
+`npm run migrate`
 
 ## Seeding
 
 Run to seed sprites list:
 
-`psql -U gryzlywlf -d beatscape -f ./seeds/seed.sprites_list.sql`
+`psql -U gryzlywlf -d beatscape -f ./seeds/seed.sprites.sql`
+`psql -U gryzlywlf -d beatscape -f ./seeds/seed.environments.sql`
+`psql -U gryzlywlf -d beatscape -f ./seeds/seed.soundscapes.sql`
+
+## Deploying
+
+When your new project is ready for deployment, add a new Heroku application with `heroku create`. This will make a new git remote called "heroku" and you can then `npm run deploy` which will push to this remote's master branch.
+
+
