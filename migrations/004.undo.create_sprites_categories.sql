@@ -1,0 +1,1 @@
+DROP TABLE IF EXISTS sprites_categories

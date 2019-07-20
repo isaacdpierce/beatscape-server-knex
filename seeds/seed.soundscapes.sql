@@ -1,119 +1,122 @@
 INSERT INTO soundscape_music (soundscape_name, stems)   
 VALUES 
 (
-	'Silky Setup',
+	'New York Hustle',
 	'[
 		{
 			"stemName": "kick",
-			"urls": ["https://beatscape.s3.ca-central-1.amazonaws.com/kick.mp3"]
+			"animate": true,
+			"sources": ["https://beatscape.s3.ca-central-1.amazonaws.com/music/new-york-hustle/kick.mp3"]
 		},
 		{
 			"stemName": "snare",
-			"urls": ["https://beatscape.s3.ca-central-1.amazonaws.com/snare.mp3"]
+			"animate": true,
+			"sources": ["https://beatscape.s3.ca-central-1.amazonaws.com/music/new-york-hustle/snare.mp3"]
 		},
 		{
 			"stemName": "percussion",
-			"urls": ["https://beatscape.s3.ca-central-1.amazonaws.com/piano.mp3"]
+			"animate": true,
+			"sources": ["https://beatscape.s3.ca-central-1.amazonaws.com/music/new-york-hustle/piano.mp3"]
 		},
 		{
 			"stemName": "cymbals",
-			"urls": ["https://beatscape.s3.ca-central-1.amazonaws.com/cymbals.mp3"]
+			"animate": true,
+			"sources": ["https://beatscape.s3.ca-central-1.amazonaws.com/music/new-york-hustle/cymbals.mp3"]
 		},
 		{
 			"stemName": "accessory",
-			"urls": ["https://beatscape.s3.ca-central-1.amazonaws.com/chords.mp3"]
+			"animate": true,
+			"sources": ["https://beatscape.s3.ca-central-1.amazonaws.com/music/new-york-hustle/chords.mp3"]
 		},
 		{
 			"stemName": "melody",
-			"urls": ["https://beatscape.s3.ca-central-1.amazonaws.com/melody.mp3"]
+			"animate": true,
+			"sources": ["https://beatscape.s3.ca-central-1.amazonaws.com/music/new-york-hustle/melody.mp3"]
 		},
 		{
 			"stemName": "harmony",
-			"urls": ["https://beatscape.s3.ca-central-1.amazonaws.com/harmony.mp3"]
+			"animate": true,
+			"sources": ["https://beatscape.s3.ca-central-1.amazonaws.com/music/new-york-hustle/harmony.mp3"]
 		},
 		{
 			"stemName": "instrument",
-			"urls": ["https://beatscape.s3.ca-central-1.amazonaws.com/instrument.mp3"]
+			"animate": true,
+			"sources": ["https://beatscape.s3.ca-central-1.amazonaws.com/music/new-york-hustle/instrument.mp3"]
 		},
 		{
 			"stemName": "atmosphere",
-			"urls": ["https://beatscape.s3.ca-central-1.amazonaws.com/atmospheric.mp3"]
+			"animate": true,
+			"sources": ["https://beatscape.s3.ca-central-1.amazonaws.com/music/new-york-hustle/atmospheric.mp3"]
 		},
 		{
 			"stemName": "sprites",
-			"urls": ["https://beatscape.s3.ca-central-1.amazonaws.com/sprites.mp3"]
+			"animate": true,
+			"sources": ["https://beatscape.s3.ca-central-1.amazonaws.com/music/new-york-hustle/sprites.mp3"]
 		},
 		{
-			"stemName": "bass",
-			"urls": ["https://beatscape.s3.ca-central-1.amazonaws.com/bass.mp3"]
+			"stemName": "environment",
+			"animate": false,
+			"sources": ["https://beatscape.s3.ca-central-1.amazonaws.com/environments/city/new-york-rain.mp3", "https://beatscape.s3.ca-central-1.amazonaws.com/environments/city/new-york.mp3"]
 		}
 	]'
   ),
 (
-	'Tempt Test',
+	'Secret Forest',
   '[{
 			"stemName": "kick",
-			"urls": ["https://beatscape.s3.ca-central-1.amazonaws.com/kick.mp3"]
+			"animate": true,
+			"sources": ["https://beatscape.s3.ca-central-1.amazonaws.com/music/forest/kick.mp3"]
 		},
 		{
 			"stemName": "snare",
-			"urls": ["https://beatscape.s3.ca-central-1.amazonaws.com/snare.mp3"]
-		},
-		{
+			"animate": true,
+			"sources": ["https://beatscape.s3.ca-central-1.amazonaws.com/music/forest/snare.mp3"]
+		}
+{
 			"stemName": "percussion",
-			"urls": ["https://beatscape.s3.ca-central-1.amazonaws.com/piano.mp3"]
+			"animate": true,
+			"sources": ["https://beatscape.s3.ca-central-1.amazonaws.com/music/forest/piano.mp3"]
 		},
 		{
 			"stemName": "cymbals",
-			"urls": ["https://beatscape.s3.ca-central-1.amazonaws.com/cymbals.mp3"]
+			"animate": true,
+			"sources": ["https://beatscape.s3.ca-central-1.amazonaws.com/music/forest/cymbals.mp3"]
 		},
 		{
 			"stemName": "accessory",
-			"urls": ["https://beatscape.s3.ca-central-1.amazonaws.com/chords.mp3"]
+			"animate": true,
+			"sources": ["https://beatscape.s3.ca-central-1.amazonaws.com/music/forest/chords.mp3"]
 		},
 		{
 			"stemName": "melody",
-			"urls": ["https://beatscape.s3.ca-central-1.amazonaws.com/melody.mp3"]
+			"animate": true,
+			"sources": ["https://beatscape.s3.ca-central-1.amazonaws.com/music/forest/melody.mp3"]
 		},
 		{
 			"stemName": "harmony",
-			"urls": ["https://beatscape.s3.ca-central-1.amazonaws.com/harmony.mp3"]
+			"animate": true,
+			"sources": ["https://beatscape.s3.ca-central-1.amazonaws.com/music/forest/harmony.mp3"]
 		},
 		{
 			"stemName": "instrument",
-			"urls": ["https://beatscape.s3.ca-central-1.amazonaws.com/instrument.mp3"]
+			"animate": true,
+			"sources": ["https://beatscape.s3.ca-central-1.amazonaws.com/music/forest/instrument.mp3"]
 		},
 		{
 			"stemName": "atmosphere",
-			"urls": ["https://beatscape.s3.ca-central-1.amazonaws.com/atmospheric.mp3"]
+			"animate": true,
+			"sources": ["https://beatscape.s3.ca-central-1.amazonaws.com/music/forest/atmospheric.mp3"]
 		},
 		{
 			"stemName": "sprites",
-			"urls": ["https://beatscape.s3.ca-central-1.amazonaws.com/sprites.mp3"]
+			"animate": true,
+			"sources": ["https://beatscape.s3.ca-central-1.amazonaws.com/music/forest/sprites.mp3"]
 		},
 		{
-			"stemName": "bass",
-			"urls": ["https://beatscape.s3.ca-central-1.amazonaws.com/bass.mp3"]
-		}
+			"stemName": "environment",
+			"animate": false,
+			"sources": ["https://beatscape.s3.ca-central-1.amazonaws.com/environments/forest/forest-winter.mp3", "https://beatscape.s3.ca-central-1.amazonaws.com/environments/forest/forest-waterfall.mp3"]
+		}	
 	]'
   )
-
-
-
--- INSERT INTO soundscape_music
--- (soundscape_name, kick, snare, percussion, cymbals, accessory, melody, harmony, instrument, atmosphere)
-
--- VALUES
--- (
---   'Silky Setup',
---   '{"https://beatscape.s3.ca-central-1.amazonaws.com/kick.mp3"}',
---   '{"https://beatscape.s3.ca-central-1.amazonaws.com/snare.mp3"}',
---   '{"https://beatscape.s3.ca-central-1.amazonaws.com/bass.mp3"}',
---   '{"https://beatscape.s3.ca-central-1.amazonaws.com/cymbals.mp3"}',
---   '{"https://beatscape.s3.ca-central-1.amazonaws.com/piano.mp3"}',
---   '{"https://beatscape.s3.ca-central-1.amazonaws.com/melody.mp3"}',
---   '{"https://beatscape.s3.ca-central-1.amazonaws.com/harmony.mp3"}',
---   '{"https://beatscape.s3.ca-central-1.amazonaws.com/instrument.mp3"}',
---   '{"https://beatscape.s3.ca-central-1.amazonaws.com/atmospheric.mp3"}'
--- );
 

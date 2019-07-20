@@ -21,6 +21,7 @@ Start nodemon for the application `npm run dev`
 
 Run the tests `npm test`
 
+
 ## Migrations
 
 `npm run migrate`
@@ -29,9 +30,11 @@ Run the tests `npm test`
 
 Run to seed sprites list:
 
-`psql -U gryzlywlf -d beatscape -f ./seeds/seed.sprites.sql`
-`psql -U gryzlywlf -d beatscape -f ./seeds/seed.environments.sql`
 `psql -U gryzlywlf -d beatscape -f ./seeds/seed.soundscapes.sql`
+`psql -U gryzlywlf -d beatscape -f ./seeds/seed.sprites.sql`
+`psql -U gryzlywlf -d beatscape -f ./seeds/seed.sprites_categories.sql`
+`psql -U gryzlywlf -d beatscape -f ./seeds/seed.environments.sql`
+`psql -U gryzlywlf -d beatscape -f ./seeds/seed.environments_categories.sql`
 
 ## Deploying
 
