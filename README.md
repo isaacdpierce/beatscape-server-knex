@@ -32,9 +32,11 @@ Run to seed sprites list:
 
 `psql -U gryzlywlf -d beatscape -f ./seeds/seed.soundscapes.sql`
 `psql -U gryzlywlf -d beatscape -f ./seeds/seed.sprites.sql`
-`psql -U gryzlywlf -d beatscape -f ./seeds/seed.sprites_categories.sql`
 `psql -U gryzlywlf -d beatscape -f ./seeds/seed.environments.sql`
-`psql -U gryzlywlf -d beatscape -f ./seeds/seed.environments_categories.sql`
+`psql -U gryzlywlf -d beatscape -f ./seeds/seed.categories.sql`
+`psql -U gryzlywlf -d beatscape -f ./seeds/seed.categories_soundscapes.sql`
+`psql -U gryzlywlf -d beatscape -f ./seeds/seed.categories_sprites.sql`
+`psql -U gryzlywlf -d beatscape -f ./seeds/seed.categories_environments.sql`
 
 ## Deploying
 

@@ -1,0 +1,33 @@
+CREATE TABLE categories (
+    category_id int NOT NULL,
+    category_number int NOT NULL, // MAYBE UNNECESSARY
+    soundscape_id int,
+    PRIMARY KEY (category_id),
+    FOREIGN KEY (soundscape_id) REFERENCES soundscapes(soundscape_id)
+);
+
+CREATE TABLE sprites (
+    sprite_id int NOT NULL,
+    sprite_number int NOT NULL,  // MAYBE UNNECESSARY
+    category_id int,
+    PRIMARY KEY (sprite_id),
+    FOREIGN KEY (category_id) REFERENCES categories(category_id)
+);
+
+CREATE TABLE environments (
+    environment_id int NOT NULL,
+    environment_number int NOT NULL,  // MAYBE UNNECESSARY
+    category_id int,
+    PRIMARY KEY (environment_id),
+    FOREIGN KEY (category_id) REFERENCES categories(category_id)
+);
+
+
+SELECT "categories".* FROM "categories" WHERE "categories"."soundscape_id" = $1  
+/:soundscape_id/:soundscape_id
+
+SELECT "sprites".* FROM "sprites" WHERE "sprites"."category_id" = $1  
+/:soundscape_id/:category_id/:sprite_id
+
+SELECT * from sprites WHERE category_id = 1
+SELECT * from sprites WHERE category = "city"
