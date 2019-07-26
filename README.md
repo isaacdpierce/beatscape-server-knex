@@ -43,3 +43,26 @@ Run to seed sprites list:
 When your new project is ready for deployment, add a new Heroku application with `heroku create`. This will make a new git remote called "heroku" and you can then `npm run deploy` which will push to this remote's master branch.
 
 
+## GET CATEGORY BASED ON SOUNDSCAPE ID
+
+select * from categories 
+inner join categories_soundscapes 
+on categories.category_id = categories_soundscapes.category_id
+where categories_soundscapes.soundscape_id = 1 
+limit 1
+
+## GET SPRITES FROM CATEGORY
+
+select sprite_url from sprites 
+inner join categories_sprites 
+on sprites.sprite_id = categories_sprites.sprite_id 
+where categories_sprites.category_id = 1
+
+## GET ENVIRONMENTS FROM CATEGORY
+
+select environment_url from environments 
+inner join categories_environments 
+on environments.environment_id = categories_environments.environment_id 
+where categories_environments.category_id = 1
+
+

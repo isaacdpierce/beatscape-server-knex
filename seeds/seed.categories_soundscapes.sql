@@ -1,9 +1,17 @@
-INSERT INTO categories_environments
-( category_id, environment_id )
+INSERT INTO categories_soundscapes
+( category_id, soundscape_id )
 
-(1, ?)
+VALUES
+(1, 1), 
+(3, 1),
+(5, 2), 
+(6, 2);
 
---? How to get all environments of same category? 
+
+-- soundscapes
+-- 1 = 'New York Hustle'
+-- 2 = 'Secret Forest'
+
 
 -- categories
 -- 1 = ('city'), 

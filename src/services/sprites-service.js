@@ -18,12 +18,13 @@ const SpritesService = {
       .where('sprite_id', id)
       .first();
   },
-  getByScene(knex, scene) {
-    return knex
-      .select('*')
-      .from('sprites')
-      .where('scene', scene);
-  },
+  // TODO - Get working with new db config
+  // getByCategory(knex, category_id) {
+  //   return knex
+  //     .select('*')
+  //     .from('sprites')
+  //     .where('sprite_id', category_id);
+  // },
   deleteSprite(knex, sprite_id) {
     return knex
       .from('sprites')

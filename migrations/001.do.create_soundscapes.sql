@@ -1,5 +1,5 @@
 CREATE TABLE soundscapes (
-  id BIGSERIAL PRIMARY KEY,
+  soundscape_id SERIAL PRIMARY KEY,
   soundscape_name TEXT NOT NULL,
   stems JSONB NOT NULL
 );
