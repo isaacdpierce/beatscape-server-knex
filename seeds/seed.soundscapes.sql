@@ -1,52 +1,52 @@
 INSERT INTO soundscapes (soundscape_name, stems)   
 VALUES 
 (
-	'New York Hustle',
+	'Determined',
 	'[
 		{
 			"stemName": "kick",
 			"animate": true,
-			"sources": ["https://beatscape.s3.ca-central-1.amazonaws.com/music/new-york/kick.mp3"]
+			"sources": ["https://beatscape.s3.ca-central-1.amazonaws.com/music/determined/kick.mp3"]
 		},
 		{
 			"stemName": "snare",
 			"animate": true,
-			"sources": ["https://beatscape.s3.ca-central-1.amazonaws.com/music/new-york/snare.mp3"]
+			"sources": ["https://beatscape.s3.ca-central-1.amazonaws.com/music/determined/snare.mp3"]
 		},
 		{
 			"stemName": "percussion",
 			"animate": true,
-			"sources": ["https://beatscape.s3.ca-central-1.amazonaws.com/music/new-york/percussion.mp3"]
+			"sources": ["https://beatscape.s3.ca-central-1.amazonaws.com/music/determined/percussion.mp3"]
 		},
 		{
 			"stemName": "cymbals",
 			"animate": true,
-			"sources": ["https://beatscape.s3.ca-central-1.amazonaws.com/music/new-york/cymbal.mp3"]
+			"sources": ["https://beatscape.s3.ca-central-1.amazonaws.com/music/determined/cymbal.mp3"]
 		},
 		{
 			"stemName": "accessory",
 			"animate": true,
-			"sources": ["https://beatscape.s3.ca-central-1.amazonaws.com/music/new-york/accessory.mp3"]
+			"sources": ["https://beatscape.s3.ca-central-1.amazonaws.com/music/determined/accessory.mp3"]
 		},
 		{
 			"stemName": "melody",
 			"animate": true,
-			"sources": ["https://beatscape.s3.ca-central-1.amazonaws.com/music/new-york/melody.mp3"]
+			"sources": ["https://beatscape.s3.ca-central-1.amazonaws.com/music/determined/melody.mp3"]
 		},
 		{
 			"stemName": "harmony",
 			"animate": true,
-			"sources": ["https://beatscape.s3.ca-central-1.amazonaws.com/music/new-york/harmony.mp3"]
+			"sources": ["https://beatscape.s3.ca-central-1.amazonaws.com/music/determined/harmony.mp3"]
 		},
 		{
 			"stemName": "instrument",
 			"animate": true,
-			"sources": ["https://beatscape.s3.ca-central-1.amazonaws.com/music/new-york/instrument.mp3"]
+			"sources": ["https://beatscape.s3.ca-central-1.amazonaws.com/music/determined/instrument.mp3"]
 		},
 		{
 			"stemName": "bass",
 			"animate": true,
-			"sources": ["https://beatscape.s3.ca-central-1.amazonaws.com/music/new-york/+bass.mp3"]
+			"sources": ["https://beatscape.s3.ca-central-1.amazonaws.com/music/determined/+bass.mp3"]
 		},
 		{
 			"stemName": "sprites",
@@ -61,7 +61,7 @@ VALUES
 	]'
   ),
 (
-	'Secret Forest',
+	'Focused',
   '[{
 			"stemName": "kick",
 			"animate": true,
@@ -110,12 +110,12 @@ VALUES
 		{
 			"stemName": "sprites",
 			"animate": true,
-			"sources": ["https://beatscape.s3.ca-central-1.amazonaws.com/music/secret-forest/sprites.mp3"]
+			"sources": ["https://beatscape.s3.ca-central-1.amazonaws.com/environments/forest/forest-waterfall.mp3", "https://beatscape.s3.ca-central-1.amazonaws.com/sprites/water/light-flowing-stream.mp3", "https://beatscape.s3.ca-central-1.amazonaws.com/sprites/water/small-flowing-water.mp3", "https://beatscape.s3.ca-central-1.amazonaws.com/sprites/water/waterfall-short.mp3"]
 		},
 		{
 			"stemName": "environment",
-			"animate": false,
-			"sources": ["https://beatscape.s3.ca-central-1.amazonaws.com/environments/forest/forest-winter.mp3", "https://beatscape.s3.ca-central-1.amazonaws.com/environments/forest/forest-waterfall.mp3"]
+			"animate": true,
+			"sources": ["https://beatscape.s3.ca-central-1.amazonaws.com/environments/forest/forest-winter.mp3", "https://beatscape.s3.ca-central-1.amazonaws.com/sprites/forest/forest-thunder.mp3"]
 		}	
 	]'
   )

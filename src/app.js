@@ -7,6 +7,7 @@ const { NODE_ENV } = require('./config');
 
 const soundscapesRouter = require('./routers/soundscapes-router');
 const spritesRouter = require('./routers/sprites-router');
+const sceneRouter = require('./routers/scene-router');
 const environmentsRouter = require('./routers/environments-router');
 
 const app = express();
@@ -22,6 +23,7 @@ app.use(helmet());
 app.use('/api/soundscapes', soundscapesRouter);
 app.use('/api/sprites', spritesRouter);
 app.use('/api/environments', environmentsRouter);
+app.use('/api/scene', sceneRouter);
 
 app.get('/', (req, res) => {
   res.send('Hello, world!');

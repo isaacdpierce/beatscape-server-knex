@@ -10,14 +10,14 @@ const EnvironmentsService = {
       .first();
   },
   // TODO - Get working with new db config
-  // getByCategory(knex, category_id) {
-  //   return knex
-  //     .select('environment_url')
-  //     .from('environments')
-  //     .innerJoin('categories_environments')
-  //     .on('environments.environment_id', 'categories_environments.environment_id')
-  //     .where('categories_environments.category_id', category_id);
-  // },
+  getByCategory(knex, category_id) {
+    return knex
+      .select('environment_url')
+      .from('environments')
+      .innerJoin('categories_environments')
+      .on('environments.environment_id', 'categories_environments.environment_id')
+      .where('categories_environments.category_id', category_id);
+  },
 
   //   select environment_url from environments
   // inner join categories_environments
