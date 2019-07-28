@@ -7,8 +7,10 @@ const jsonParser = express.json();
 
 sceneRouter.route('/:scene_id').get((req, res, next) => {
   const knexInstance = req.app.get('db');
-  SceneService.getById(knexInstance, req.params.sprite_id)
+  SceneService.getById(knexInstance, req.params.scene_id)
     .then(scene => {
+      console.log(scene);
+      
       if (!scene) {
         return res.status(404).json({
           error: { message: `Scene doesn't exist` },

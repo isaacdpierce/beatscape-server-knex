@@ -26,16 +26,6 @@ spritesRouter.route('/:sprite_id').get((req, res, next) => {
     })
     .catch(next);
 });
-spritesRouter.route('/scenes/:scene').get((req, res, next) => {
-  const knexInstance = req.app.get('db');
 
-  console.log('Scenes parameters is ' + req.params.scene);
-
-  SpritesService.getByScene(knexInstance, req.params.scene)
-    .then(sprites => {
-      res.json(sprites);
-    })
-    .catch(next);
-});
 
 module.exports = spritesRouter;

@@ -4,6 +4,7 @@ INSERT INTO categories_environments
 VALUES
 (1, 1),
 (2, 1),
+(3, 1),
 (1, 2),
 (2, 2),
 (3, 3),

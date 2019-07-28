@@ -3,11 +3,16 @@ const EnvironmentsService = {
     return knex.select('*').from('environments');
   },
   getById(knex, id) {
+    console.log(`Environments Service Called ID is ${id}`);
     return knex
+      .select('environment_url')
       .from('environments')
-      .select('*')
-      .where('environment_id', id)
-      .first();
+      .innerJoin(
+        'categories_environments',
+        'environments.environment_id',
+        'categories_environments.environment_id'
+      )
+      .where({ 'categories_environments.category_id': id });
   },
   // TODO - Get working with new db config
   getByCategory(knex, category_id) {
@@ -15,7 +20,10 @@ const EnvironmentsService = {
       .select('environment_url')
       .from('environments')
       .innerJoin('categories_environments')
-      .on('environments.environment_id', 'categories_environments.environment_id')
+      .on(
+        'environments.environment_id',
+        'categories_environments.environment_id'
+      )
       .where('categories_environments.category_id', category_id);
   },
 
