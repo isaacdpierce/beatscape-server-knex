@@ -1,5 +1,5 @@
 INSERT INTO sprites
-(sprite_url, setting)
+(sprite_url, scene)
 
 VALUES
 ('https://beatscape.s3.ca-central-1.amazonaws.com/sprites/city/birds-over-brooklyn.mp3', 'city'),

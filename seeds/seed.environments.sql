@@ -1,5 +1,5 @@
 INSERT INTO environments
-(environment_url, setting)
+(environment_url, scene)
 
 VALUES
 ('https://beatscape.s3.ca-central-1.amazonaws.com/environments/city/new-york-rain.mp3', 'city'),
