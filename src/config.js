@@ -3,5 +3,5 @@ module.exports = {
   NODE_ENV: process.env.NODE_ENV || 'development',
   DB_URL:
     process.env.DATABASE_URL ||
-    'postgresql://gryzlywlf@localhost/beatscape?ssl=true',
+    'postgresql://gryzlywlf@localhost/beatscape',
 };
