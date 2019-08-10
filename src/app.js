@@ -18,8 +18,6 @@ app.use(morgan(morganOption));
 app.use(cors());
 app.use(helmet());
 
-// 'db' is set in server.js then passed in to app -> app.set
-
 app.use('/api/soundscapes', soundscapesRouter);
 app.use('/api/sprites', spritesRouter);
 app.use('/api/environments', environmentsRouter);

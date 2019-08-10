@@ -30,13 +30,13 @@ Run the tests `npm test`
 
 Run to seed sprites list:
 
-`psql -U gryzlywlf -d beatscape -f ./seeds/seed.soundscapes.sql`
-`psql -U gryzlywlf -d beatscape -f ./seeds/seed.sprites.sql`
-`psql -U gryzlywlf -d beatscape -f ./seeds/seed.environments.sql`
-`psql -U gryzlywlf -d beatscape -f ./seeds/seed.categories.sql`
-`psql -U gryzlywlf -d beatscape -f ./seeds/seed.categories_soundscapes.sql`
-`psql -U gryzlywlf -d beatscape -f ./seeds/seed.categories_sprites.sql`
-`psql -U gryzlywlf -d beatscape -f ./seeds/seed.categories_environments.sql`
+`psql -U <username> -d <dbname> -f ./seeds/seed.soundscapes.sql`
+`psql -U <username> -d <dbname> -f ./seeds/seed.sprites.sql`
+`psql -U <username> -d <dbname> -f ./seeds/seed.environments.sql`
+`psql -U <username> -d <dbname> -f ./seeds/seed.categories.sql`
+`psql -U <username> -d <dbname> -f ./seeds/seed.categories_soundscapes.sql`
+`psql -U <username> -d <dbname> -f ./seeds/seed.categories_sprites.sql`
+`psql -U <username> -d <dbname> -f ./seeds/seed.categories_environments.sql`
 
 ## Deploying
 
@@ -64,5 +64,3 @@ select environment_url from environments
 inner join categories_environments 
 on environments.environment_id = categories_environments.environment_id 
 where categories_environments.category_id = 1
-
-

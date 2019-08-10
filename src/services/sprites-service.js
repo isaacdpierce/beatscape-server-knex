@@ -23,13 +23,7 @@ const SpritesService = {
        )
        .where({ 'categories_sprites.category_id': id });
   },
-  // TODO - Get working with new db config
-  // getByCategory(knex, category_id) {
-  //   return knex
-  //     .select('*')
-  //     .from('sprites')
-  //     .where('sprite_id', category_id);
-  // },
+
   deleteSprite(knex, sprite_id) {
     return knex
       .from('sprites')
