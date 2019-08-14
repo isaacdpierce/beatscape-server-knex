@@ -18,7 +18,6 @@ VALUES
 ('https://beatscape.s3.ca-central-1.amazonaws.com/sprites/city/ice-cream-car-ny.mp3', 'city'),
 ('https://beatscape.s3.ca-central-1.amazonaws.com/sprites/city/last-stop.mp3', 'city'),
 ('https://beatscape.s3.ca-central-1.amazonaws.com/sprites/city/madison-square-garden.mp3', 'city'),
-('https://beatscape.s3.ca-central-1.amazonaws.com/sprites/city/memorialfountains.mp3', 'city'),
 ('https://beatscape.s3.ca-central-1.amazonaws.com/sprites/city/motorcycle-1.mp3', 'city'),
 ('https://beatscape.s3.ca-central-1.amazonaws.com/sprites/city/new-york-city-filmset.mp3', 'city'),
 ('https://beatscape.s3.ca-central-1.amazonaws.com/sprites/city/new-york-street-ambience.mp3', 'city'),
