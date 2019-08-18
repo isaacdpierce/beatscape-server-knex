@@ -60,3 +60,4 @@ select environment_url from environments
 inner join categories_environments 
 on environments.environment_id = categories_environments.environment_id 
 where categories_environments.category_id = 1
+
